@@ -21,7 +21,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      process.env.FRONT
+      "https://skillx-mu.vercel.app"
     ],
     credentials: true
   })
