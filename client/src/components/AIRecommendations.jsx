@@ -10,7 +10,7 @@ const AIRecommendations = () => {
     if (!token) return;
     //fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`)
 
-    fetch(`${import.meta.env.ORIGIN}/api/recommendations`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/recommendations`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

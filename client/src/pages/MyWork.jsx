@@ -10,7 +10,7 @@ const MyWork = () => {
   useEffect(() => {
     if (!token) return;
 
-    fetch(`${import.meta.env.ORIGIN}/api/projects/assigned/me`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/projects/assigned/me`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -20,7 +20,7 @@ const MyWork = () => {
   }, [token]);
 
   const markCompleted = async (projectId) => {
-    await fetch(`${import.meta.env.ORIGIN}/api/completion/worker-complete`, {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/completion/worker-complete`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -15,7 +15,7 @@ const Profile = () => {
     if (!token) return;
 
     // Fetch profile
-    fetch(`${import.meta.env.ORIGIN}/api/profile`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/profile`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -25,7 +25,7 @@ const Profile = () => {
       });
 
     // Fetch active assigned projects
-    fetch(`${import.meta.env.ORIGIN}/api/projects/assigned/me`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/projects/assigned/me`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -38,7 +38,7 @@ const Profile = () => {
       .map(s => s.trim())
       .filter(Boolean);
 
-    const res = await fetch(`${import.meta.env.ORIGIN}/api/profile/skills`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/profile/skills`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -12,14 +12,14 @@ const ProjectFeed = () => {
     if (!token) return;
 
     // fetch open projects
-    fetch(`${import.meta.env.ORIGIN}/api/projects`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/projects`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
       .then(setProjects);
 
     // fetch my applications
-    fetch(`${import.meta.env.ORIGIN}/api/applications/my`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/applications/my`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -28,7 +28,7 @@ const ProjectFeed = () => {
 
   const applyToProject = async (projectId) => {
     const res = await fetch(
-      `${import.meta.env.ORIGIN}/api/applications/apply`,
+      `${import.meta.env.VITE_API_URL}/api/applications/apply`,
       {
         method: "POST",
         headers: {
