@@ -8,7 +8,7 @@ const ProjectApplications = () => {
   const [applications, setApplications] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/applications/${projectId}`, {
+    fetch(`${import.meta.env.ORIGIN}/api/applications/${projectId}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -18,7 +18,7 @@ const ProjectApplications = () => {
   }, [projectId, token]);
 
   const approve = async (id) => {
-    await fetch("http://localhost:5000/api/applications/approve", {
+    await fetch(`${import.meta.env.ORIGIN}/api/applications/approve`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

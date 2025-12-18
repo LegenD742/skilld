@@ -18,7 +18,7 @@ const MyProjects = () => {
 
       // 1️⃣ Fetch my projects
       const projectRes = await fetch(
-        "http://localhost:5000/api/projects/my",
+        `${import.meta.env.ORIGIN}/api/projects/my`,
         {
           headers: { Authorization: `Bearer ${token}` }
         }
@@ -31,7 +31,7 @@ const MyProjects = () => {
         projectData.map(async (project) => {
           try {
             const res = await fetch(
-              `http://localhost:5000/api/applications/${project._id}`,
+              `${import.meta.env.ORIGIN}/api/applications/${project._id}`,
               {
                 headers: { Authorization: `Bearer ${token}` }
               }
@@ -66,7 +66,7 @@ const MyProjects = () => {
 
   // ✅ APPROVE WORKER
   const approve = async (applicationId, projectId) => {
-    await fetch("http://localhost:5000/api/applications/approve", {
+    await fetch(`${import.meta.env.ORIGIN}/api/applications/approve`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const MyProjects = () => {
 
   // ✅ VERIFY COMPLETION
   const verifyCompletion = async (projectId) => {
-    await fetch("http://localhost:5000/api/completion/client-verify", {
+    await fetch(`${import.meta.env.ORIGIN}/api/completion/client-verify`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

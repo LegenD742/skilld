@@ -34,7 +34,7 @@ const CreateProject = () => {
 
     setLoading(true);
 
-    const res = await fetch("http://localhost:5000/api/projects", {
+    const res = await fetch(`${import.meta.env.ORIGIN}/api/projects`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

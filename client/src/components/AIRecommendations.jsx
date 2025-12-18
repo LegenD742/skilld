@@ -8,8 +8,9 @@ const AIRecommendations = () => {
 
   useEffect(() => {
     if (!token) return;
+    //fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`)
 
-    fetch("http://localhost:5000/api/recommendations", {
+    fetch(`${import.meta.env.ORIGIN}/api/recommendations`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

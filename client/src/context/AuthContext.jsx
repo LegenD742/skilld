@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
   const refreshUser = async () => {
     if (!token) return;
 
-    const res = await fetch("http://localhost:5000/api/profile", {
+    const res = await fetch(`${import.meta.env.ORIGIN}/api/profile`, {
       headers: { Authorization: `Bearer ${token}` }
     });
 
