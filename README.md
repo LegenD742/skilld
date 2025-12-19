@@ -67,5 +67,5 @@ SkillX is a full-stack web platform that enables users to collaborate on real pr
 
 ---
 
-## 🧱 Architecture Overview
+
 
